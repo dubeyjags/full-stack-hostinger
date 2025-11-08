@@ -1,0 +1,24 @@
+version: '3.9'
+services:
+  server:
+    build: ./server
+    container_name: express-server
+    ports:
+      - "4000:4000"
+    networks: # connect to fullstack-network
+      - fullstack-network
+    restart: unless-stopped # restart policy
+  client:
+    build: ./client # build the React client from the ./client directory
+    container_name: react-client # name the container react-client
+    ports: # map host port 5174 to container port 3000
+      - "5174:3000"
+    networks: # client depends on server
+      - fullstack-network
+    restart: unless-stopped # restart policy
+    depends_on: # client depends on server
+      - server
+
+networks:
+  fullstack-network:
+    driver: bridge
