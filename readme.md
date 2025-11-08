@@ -125,20 +125,22 @@ VPS machine
 -- manage > terminal/SSH
 
 `sudo apt update -y`
-`supt apt install git -y`
-`git --version`
-`cd /home/ubuntu`
-`git clone gitprojectpath`
-`cd folder to compose.yml`
-`cd chmod +x docker-compose.yml` // to get the excutable permissions
-`docker compose up --build`
+```
+supt apt install git -y
+git --version
+cd /home/ubuntu
+git clone gitprojectpath
+cd folder to compose.yml
+cd chmod +x docker-compose.yml // to get the excutable permissions
+docker compose up --build
+```
 
-check the ip
-check the api
-check the domain/host
+check the ip  
+check the api  
+check the domain/host  
 
 docker ubuntu install (doc.docker.com)
  - install using apt repo
--- run the commands
+ - run the commands
 
 `docker --version`
